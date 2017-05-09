@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="a6G-3s-i8s">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Downloads-->
+        <scene sceneID="a7X-bE-x12">
+            <objects>
+                <viewController id="oye-zS-Oyz" customClass="DownloadsViewController" customModule="VimeoVideoDownloader" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oQd-2y-nh1"/>
+                        <viewControllerLayoutGuide type="bottom" id="mxQ-Os-I2I"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ooO-Yb-G8H">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Downloads" id="DqT-yw-QC6"/>
+                    <connections>
+                        <outlet property="DownloadingView" destination="AWC-bt-ErR" id="g6t-M8-yQg"/>
+                        <outlet property="DownlodedView" destination="VWE-lO-LRG" id="y4Y-5s-cfg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FdY-1l-LM5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" sectionHeaderHeight="28" sectionFooterHeight="28" id="AWC-bt-ErR" customClass="DownloadingTableView" customModule="VimeoVideoDownloader" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="380" height="240"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <prototypes>
+                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MZDownloadingCell" rowHeight="110" id="7vo-Aa-SWL" customClass="MZDownloadingCell" customModule="VimeoVideoDownloader" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="28" width="380" height="110"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7vo-Aa-SWL" id="hHO-GD-1Dw">
+                                <rect key="frame" x="0.0" y="0.0" width="380" height="109"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOR-6h-rvX">
+                                        <rect key="frame" x="5" y="5" width="370" height="15"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ovw-7x-gdw">
+                                        <rect key="frame" x="5" y="23" width="370" height="66"/>
+                                        <string key="text">File Size: Calculating...
+Downloaded: Calculating...
+Speed: Calculating...
+Time Left: Calculating...
+Status: Unknown</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Ft0-cN-yVc">
+                                        <rect key="frame" x="13" y="100" width="354" height="2"/>
+                                    </progressView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Ovw-7x-gdw" secondAttribute="trailing" constant="5" id="6pw-lh-cAt"/>
+                                    <constraint firstItem="Ft0-cN-yVc" firstAttribute="top" secondItem="Ovw-7x-gdw" secondAttribute="bottom" constant="11" id="EJG-Av-11Q"/>
+                                    <constraint firstItem="xOR-6h-rvX" firstAttribute="top" secondItem="hHO-GD-1Dw" secondAttribute="top" constant="5" id="LGA-sr-dRA"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="Ft0-cN-yVc" secondAttribute="trailing" constant="5" id="W4y-kU-9yD"/>
+                                    <constraint firstItem="Ft0-cN-yVc" firstAttribute="leading" secondItem="hHO-GD-1Dw" secondAttribute="leadingMargin" constant="5" id="Ysb-HR-LBP"/>
+                                    <constraint firstItem="Ovw-7x-gdw" firstAttribute="top" secondItem="xOR-6h-rvX" secondAttribute="bottom" constant="2.5" id="dZj-m7-slv"/>
+                                    <constraint firstItem="xOR-6h-rvX" firstAttribute="leading" secondItem="hHO-GD-1Dw" secondAttribute="leading" constant="5" id="gxU-BW-NuQ"/>
+                                    <constraint firstItem="Ovw-7x-gdw" firstAttribute="leading" secondItem="hHO-GD-1Dw" secondAttribute="leading" constant="5" id="n2f-kF-wmO"/>
+                                    <constraint firstAttribute="trailing" secondItem="xOR-6h-rvX" secondAttribute="trailing" constant="5" id="wGi-F6-HB8"/>
+                                </constraints>
+                            </tableViewCellContentView>
+                            <connections>
+                                <outlet property="lblDetails" destination="Ovw-7x-gdw" id="mHB-IR-wod"/>
+                                <outlet property="lblTitle" destination="xOR-6h-rvX" id="rBe-aZ-eLB"/>
+                                <outlet property="progressDownload" destination="Ft0-cN-yVc" id="sDW-gt-Eqk"/>
+                            </connections>
+                        </tableViewCell>
+                    </prototypes>
+                </tableView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="98" sectionHeaderHeight="28" sectionFooterHeight="28" id="VWE-lO-LRG" customClass="DownloadedTableView" customModule="VimeoVideoDownloader" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="328" height="177"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <prototypes>
+                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DownloadedFileCell" rowHeight="98" id="FYf-zV-kBO" customClass="DownloadedCell" customModule="VimeoVideoDownloader" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="28" width="328" height="98"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FYf-zV-kBO" id="v4T-Bj-uVg">
+                                <rect key="frame" x="0.0" y="0.0" width="328" height="97"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="video" translatesAutoresizingMaskIntoConstraints="NO" id="0wT-es-8Ow">
+                                        <rect key="frame" x="5" y="5" width="139" height="87"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="139" id="Fgx-cD-Ve9"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XOn-1P-OBA">
+                                        <rect key="frame" x="152" y="5" width="163" height="15"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QgN-d8-vbL">
+                                        <rect key="frame" x="152" y="72" width="46" height="30"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="XOn-1P-OBA" firstAttribute="top" secondItem="0wT-es-8Ow" secondAttribute="top" id="1cy-lN-NjD"/>
+                                    <constraint firstItem="0wT-es-8Ow" firstAttribute="leading" secondItem="v4T-Bj-uVg" secondAttribute="leading" constant="5" id="3YM-AT-hTK"/>
+                                    <constraint firstItem="QgN-d8-vbL" firstAttribute="baseline" secondItem="0wT-es-8Ow" secondAttribute="baseline" id="6C2-qh-nqz"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="XOn-1P-OBA" secondAttribute="trailing" constant="5" id="CkX-oK-oxG"/>
+                                    <constraint firstItem="0wT-es-8Ow" firstAttribute="top" secondItem="v4T-Bj-uVg" secondAttribute="top" constant="5" id="PWa-Ki-Iqg"/>
+                                    <constraint firstAttribute="bottom" secondItem="0wT-es-8Ow" secondAttribute="bottom" constant="5" id="jh9-S8-SzN"/>
+                                    <constraint firstItem="QgN-d8-vbL" firstAttribute="leading" secondItem="0wT-es-8Ow" secondAttribute="trailing" constant="8" id="nCw-Ov-9CC"/>
+                                    <constraint firstItem="XOn-1P-OBA" firstAttribute="leading" secondItem="0wT-es-8Ow" secondAttribute="trailing" constant="8" id="zKm-fq-9b9"/>
+                                </constraints>
+                            </tableViewCellContentView>
+                            <connections>
+                                <outlet property="deleteButton" destination="QgN-d8-vbL" id="y4z-Ok-kik"/>
+                                <outlet property="titleLabel" destination="XOn-1P-OBA" id="ZHo-rc-10T"/>
+                                <outlet property="videoImage" destination="0wT-es-8Ow" id="5uY-6x-9C4"/>
+                            </connections>
+                        </tableViewCell>
+                    </prototypes>
+                </tableView>
+            </objects>
+            <point key="canvasLocation" x="-7442" y="-1119"/>
+        </scene>
+        <!--PlayerScreen-->
+        <scene sceneID="ON3-ej-HfJ">
+            <objects>
+                <viewController id="hmV-AQ-RfF" customClass="PlayerViewController" customModule="VimeoVideoDownloader" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1mC-fY-Tn1"/>
+                        <viewControllerLayoutGuide type="bottom" id="BjA-FC-leB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TCQ-Od-qxm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lsN-Su-PMq">
+                                <rect key="frame" x="131" y="318" width="112" height="30"/>
+                                <state key="normal" title="Download Video"/>
+                                <connections>
+                                    <action selector="StartDownloadButtonAction:" destination="hmV-AQ-RfF" eventType="touchUpInside" id="vh2-5M-74P"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lsN-Su-PMq" firstAttribute="centerX" secondItem="TCQ-Od-qxm" secondAttribute="centerX" id="UQP-sO-QN4"/>
+                            <constraint firstItem="lsN-Su-PMq" firstAttribute="centerY" secondItem="TCQ-Od-qxm" secondAttribute="centerY" id="p72-Ek-wfv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="PlayerScreen" id="8SH-Qq-XGo"/>
+                    <connections>
+                        <segue destination="oye-zS-Oyz" kind="show" identifier="viewDownloads" id="LFm-hm-SeI">
+                            <nil key="action"/>
+                        </segue>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y6H-IG-ZTB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-10577" y="-1119"/>
+        </scene>
+        <!--DownloadingTable-->
+        <scene sceneID="ona-WH-w0L">
+            <objects>
+                <viewController id="Wxh-ik-YV1" customClass="TableViewController" customModule="VimeoVideoDownloader" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="34F-Wp-aQr"/>
+                        <viewControllerLayoutGuide type="bottom" id="LJ9-Nz-lru"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ngV-A8-QbX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WZE-cE-v0y">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="KoL-d7-Uhg">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KoL-d7-Uhg" id="Xz2-dG-fOM">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Wxh-ik-YV1" id="Xjx-Pu-Vko"/>
+                                    <outlet property="delegate" destination="Wxh-ik-YV1" id="v6k-8E-Np8"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LJ9-Nz-lru" firstAttribute="top" secondItem="WZE-cE-v0y" secondAttribute="bottom" id="3gf-KP-5pw"/>
+                            <constraint firstAttribute="trailing" secondItem="WZE-cE-v0y" secondAttribute="trailing" id="BlS-I9-6HL"/>
+                            <constraint firstItem="WZE-cE-v0y" firstAttribute="leading" secondItem="ngV-A8-QbX" secondAttribute="leading" id="bQW-fz-14E"/>
+                            <constraint firstItem="WZE-cE-v0y" firstAttribute="top" secondItem="34F-Wp-aQr" secondAttribute="bottom" id="hog-mk-5ZX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="DownloadingTable" id="YF6-T0-Dpp"/>
+                    <connections>
+                        <outlet property="tableView" destination="WZE-cE-v0y" id="Ghd-3g-0xD"/>
+                        <segue destination="oye-zS-Oyz" kind="show" identifier="tableviewtodown" id="c8l-8C-2E1">
+                            <nil key="action"/>
+                        </segue>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2tg-28-3Do" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-9870" y="-242"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="HCF-bq-WWj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="b8p-64-OyE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fB2-Jc-0h7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="oye-zS-Oyz" kind="relationship" relationship="rootViewController" id="3NU-t9-Mer"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FJ8-YY-l4H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-8506" y="-1157"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="E84-fa-f6Q">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="a6G-3s-i8s" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="12s-vC-lp3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hmV-AQ-RfF" kind="relationship" relationship="rootViewController" id="DRs-Jd-UWc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tNm-so-6tY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-11329" y="-1118"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="74J-bL-9Y3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Spx-EQ-UeA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sih-Pm-Qwf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Wxh-ik-YV1" kind="relationship" relationship="rootViewController" id="wVG-7X-Qw6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DpE-wM-fNm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-10618" y="-242"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="video" width="16" height="16"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="LFm-hm-SeI"/>
+    </inferredMetricsTieBreakers>
+</document>
